@@ -54,7 +54,7 @@ const Home = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer ",
+            Authorization: "Bearer OPENAI_API_KEY",
           },
           body: JSON.stringify({
             prompt: `Crée moi une formation de ${time} heures qui sera un texte pour une capsules vidéo de ${capsuleCount} modules de ${sectionCount} sections en ${language}. La thématique sera ${question}.Propose-moi une table des matière et scénario. Et par la suite créer moi pour chaque modules et sections de cette formation. Avec une introduction, un objectifs, un texte d'explication, une bibliographie et une conclusion pour chaque modules.`,
