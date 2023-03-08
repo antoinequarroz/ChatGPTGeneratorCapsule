@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Title from "../components/Title";
+import "@fontsource/montserrat"; // Defaults to weight 400.
 
 
 const Home = () => {
@@ -86,11 +87,11 @@ const Home = () => {
         <div className="container mx-auto grid grid-cols-1 gap-6 md:grid-cols-2">
           <form onSubmit={handleSubmit} className="my-4">
             <div className="my-4 pt-10">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="question">
+              <label className="block text-[#121C42] font-bold mb-2" htmlFor="question">
                 Question du thème
               </label>
               <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-[#121C42] leading-tight focus:outline-none focus:shadow-outline"
                   id="question"
                   type="textarea"
                   placeholder="Question du thème"
@@ -100,11 +101,11 @@ const Home = () => {
             </div>
 
             <div className="my-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="time">
+              <label className="block text-[#121C42] font-bold mb-2" htmlFor="time">
                 Temps de la capsule
               </label>
               <select
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-[#121C42] leading-tight focus:outline-none focus:shadow-outline"
                   id="time"
                   value={time}
                   onChange={handleTimeChange}
@@ -117,11 +118,11 @@ const Home = () => {
               </select>
             </div>
             <div className="my-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="capsuleCount">
+              <label className="block text-[#121C42] font-bold mb-2" htmlFor="capsuleCount">
                 Nombres de sections
               </label>
               <select
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-[#121C42] leading-tight focus:outline-none focus:shadow-outline"
                   id="capsuleCount"
                   value={sectionCount}
                   onChange={handleCapsuleCountChange}
@@ -134,11 +135,11 @@ const Home = () => {
               </select>
             </div>
             <div className="my-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="moduleCount">
+              <label className="block text-[#121C42] font-bold mb-2" htmlFor="moduleCount">
                 Nombres de modules
               </label>
               <select
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-[#121C42] leading-tight focus:outline-none focus:shadow-outline"
                   id="moduleCount"
                   value={moduleCount}
                   onChange={handleModuleCountChange}
@@ -151,11 +152,11 @@ const Home = () => {
               </select>
             </div>
             <div className="my-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="language">
+              <label className="block text-[#121C42] font-bold mb-2" htmlFor="language">
                 Langues
               </label>
               <select
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-[#121C42] leading-tight focus:outline-none focus:shadow-outline"
                   id="language"
                   value={language}
                   onChange={handleLanguageChange}
@@ -174,7 +175,7 @@ const Home = () => {
 
             <div className="my-5">
               <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-[#4869EE] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded focus:outline-none focus:shadow-outline"
                   type="submit"
               >
                 Envoyer
@@ -183,11 +184,11 @@ const Home = () => {
           </form>
           <form className="my-14">
             <div className="my-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="chatGptResponse">
+              <label className="block text-[#121C42] font-bold mb-2" htmlFor="chatGptResponse">
                 Réponse de Chat GPT
               </label>
               <textarea
-                  className="shadow appearance-none border rounded w-full h-96 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full h-96 py-2 px-3 text-[#121C42] leading-tight focus:outline-none focus:shadow-outline"
                   id="chatGptResponse"
                   value={chatGptResponse}
                   readOnly
@@ -195,13 +196,13 @@ const Home = () => {
             </div>
             <div className="my-4">
               <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-[#4869EE] hover:bg-blue-700 text-white font-bold py-2 px-5 rounded focus:outline-none focus:shadow-outline"
                   onClick={handleDownload}>
                 Télécharger le rendu de ChatGPT
               </button>
             </div>
           </form>
-      </div>
+        </div>
       </div>
   );
 };
