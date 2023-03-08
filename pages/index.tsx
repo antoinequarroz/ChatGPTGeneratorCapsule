@@ -1,5 +1,4 @@
 import { useState } from "react";
-import docx, { Document, Paragraph} from "docx";
 
 
 const Home = () => {
@@ -53,7 +52,7 @@ const Home = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: "Bearer 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",
+              Authorization: "Bearer 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",
             },
             body: JSON.stringify({
               prompt: `Crée moi une formation de ${time} heures qui sera un texte pour une capsules vidéo de ${capsuleCount} modules de ${sectionCount} sections en ${language}. La thématique sera ${question}.Propose-moi une table des matière et scénario. Et par la suite créer moi pour chaque modules et sections de cette formation. Avec une introduction, un objectifs, un texte d'explication, une bibliographie et une conclusion pour chaque modules.`,
@@ -65,27 +64,21 @@ const Home = () => {
           }
       );
       const data = await response.json();
-      return data.choices[0].text.trim();
+      return data.choices[0]?.text?.trim();
     };
     // Afficher la réponse de l'API dans la console
- /* const handleDownload = () => {
-    const doc = new Document();
-    const paragraph = new Paragraph(chatGptResponse);
-    doc.addSection({
-      children: [paragraph],
-    });
-
-    docx.Packer.toBlob(doc).then((blob) => {
-      const url = window.URL.createObjectURL(new Blob([blob]));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", "document.docx");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
+    const handleDownload = () => {
+      const content = chatGptResponse;
+      const fileName = "chatGptResponse.txt";
+      const element = document.createElement("a");
+      element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(content));
+        element.setAttribute("download", fileName);
+        element.style.display = "none";
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
     };
-*/
+
   return (
       <div className="container mx-auto ">
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -194,7 +187,6 @@ const Home = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="chatGptResponse"
               value={chatGptResponse}
-              onChange={(e) => setChatGptResponse(e.target.value)}
               readOnly
           />
         </div>
