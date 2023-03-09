@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Title from "../components/Title";
-import "@fontsource/montserrat"; // Defaults to weight 400.
+import "@fontsource/montserrat";
+import Continue from "../components/Continue"; // Defaults to weight 400.
 
 
 const Home = () => {
@@ -54,7 +55,7 @@ const Home = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Bearer process.env.OPENAI_API_KEY",
+            Authorization: "Bearer ${process.env.OPENAI_API_KEY}",
           },
           body: JSON.stringify({
             prompt: `Crée moi une formation de ${time} heures qui sera un texte pour une capsules vidéo de ${capsuleCount} modules de ${sectionCount} sections en ${language}. La thématique sera ${question}.Propose-moi une table des matière et scénario. Et par la suite créer moi pour chaque modules et sections de cette formation. Avec une introduction, un objectifs, un texte d'explication, une bibliographie et une conclusion pour chaque modules.`,
@@ -180,6 +181,11 @@ const Home = () => {
               >
                 Envoyer
               </button>
+              <button className="bg-[#4869EE] hover:bg-blue-700 text-white font-bold py-2 px-5 ml-5 rounded focus:outline-none focus:shadow-outline"
+                      type="submit">
+                Continue
+              </button>
+
             </div>
           </form>
           <form className="my-14">
