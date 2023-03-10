@@ -8,6 +8,7 @@
   "dependencies": {
     "@fontsource/montserrat": "^4.5.14",
     "docx": "^7.8.2",
+    "dotenv": "^16.0.3",
     "file-saver": "^2.0.5",
     "next": "latest",
     "react": "18.2.0",
