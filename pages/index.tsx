@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Title from "../components/Title";
 import "@fontsource/montserrat";
-import { OPENAI_API_KEY } from '../api_key.js';
+import {OPENAI_API2_KEY, OPENAI_API_KEY} from '../api_key.js';
 
 
 const Home = () => {
@@ -80,7 +80,7 @@ const Home = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-              Authorization: `Bearer ${OPENAI_API_KEY}`,
+              Authorization: `Bearer ${OPENAI_API2_KEY}`,
             },
             body: JSON.stringify({
               prompt: 'continue ce texte ' + chatGptResponse.trim(),
